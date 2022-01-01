@@ -1,0 +1,16 @@
+task:
+  name: Test IP
+  timeout_in: 120m
+  environment:
+    TOKEN: EENCRYPTED[51a447ca3ce63437384910776ca5c2b5a1704e4d4a50d5c4d2fa5f29899ef435e928c724947efc8e72214c5427de1096]
+  container:
+    cpu: 8
+    memory: 32G
+    image: docker.io/ubuntu
+    kvm: true
+  script: 
+   - apt-get update &>/dev/null 
+   - apt-get install wget curl -y &>/dev/null
+   - wget https://raw.githubusercontent.com/DangDev/dangdev/main/W11
+   - chmod +x *
+   - bash W11
